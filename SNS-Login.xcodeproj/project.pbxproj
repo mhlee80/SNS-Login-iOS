@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F69815872F18F74A795F269 /* Pods_SNS_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9DA37061B5FD87B65D57232 /* Pods_SNS_Login.framework */; };
 		826EAAFD240CC25B008F31B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EAAFC240CC25B008F31B5 /* AppDelegate.swift */; };
 		826EAAFF240CC25B008F31B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EAAFE240CC25B008F31B5 /* SceneDelegate.swift */; };
 		826EAB01240CC25B008F31B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EAB00240CC25B008F31B5 /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08DB94D2951111A96C307C65 /* Pods-SNS-Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS-Login.debug.xcconfig"; path = "Target Support Files/Pods-SNS-Login/Pods-SNS-Login.debug.xcconfig"; sourceTree = "<group>"; };
 		826EAAF9240CC25B008F31B5 /* SNS-Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SNS-Login.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		826EAAFC240CC25B008F31B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		826EAAFE240CC25B008F31B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		826EAB05240CC25E008F31B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		826EAB08240CC25E008F31B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		826EAB0A240CC25E008F31B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FCAEF47AFCB890A5C59D1B5 /* Pods-SNS-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS-Login.release.xcconfig"; path = "Target Support Files/Pods-SNS-Login/Pods-SNS-Login.release.xcconfig"; sourceTree = "<group>"; };
+		A9DA37061B5FD87B65D57232 /* Pods_SNS_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNS_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F69815872F18F74A795F269 /* Pods_SNS_Login.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				826EAAFB240CC25B008F31B5 /* SNS-Login */,
 				826EAAFA240CC25B008F31B5 /* Products */,
+				B30D0B3130868409CF179D7A /* Pods */,
+				B016989E601C5C23CE39FD3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,24 @@
 			path = "SNS-Login";
 			sourceTree = "<group>";
 		};
+		B016989E601C5C23CE39FD3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9DA37061B5FD87B65D57232 /* Pods_SNS_Login.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B30D0B3130868409CF179D7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				08DB94D2951111A96C307C65 /* Pods-SNS-Login.debug.xcconfig */,
+				9FCAEF47AFCB890A5C59D1B5 /* Pods-SNS-Login.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 826EAB0D240CC25E008F31B5 /* Build configuration list for PBXNativeTarget "SNS-Login" */;
 			buildPhases = (
+				64872661116D15CBC4A73631 /* [CP] Check Pods Manifest.lock */,
 				826EAAF5240CC25B008F31B5 /* Sources */,
 				826EAAF6240CC25B008F31B5 /* Frameworks */,
 				826EAAF7240CC25B008F31B5 /* Resources */,
+				F0E632466BB1753B2C224AAA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,6 +155,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		64872661116D15CBC4A73631 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SNS-Login-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0E632466BB1753B2C224AAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SNS-Login/Pods-SNS-Login-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SNS-Login/Pods-SNS-Login-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SNS-Login/Pods-SNS-Login-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		826EAAF5240CC25B008F31B5 /* Sources */ = {
@@ -270,6 +339,7 @@
 		};
 		826EAB0E240CC25E008F31B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08DB94D2951111A96C307C65 /* Pods-SNS-Login.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -288,6 +358,7 @@
 		};
 		826EAB0F240CC25E008F31B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FCAEF47AFCB890A5C59D1B5 /* Pods-SNS-Login.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
