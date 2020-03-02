@@ -10,7 +10,12 @@ import Foundation
 
 class LoginScreenViewModel: NSObject, LoginScreenViewModelProtocol {
   var coordinator: LoginScreenCoordinatorProtocol?
+  
   func viewDidLoad() {
     log.info("")
+  }
+  
+  func presentGoogleSignInFrom(_ view: LoginScreenViewProtocol) {
+    coordinator?.presentGoogleSignInFrom(view)
   }
 }

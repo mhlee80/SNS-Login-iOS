@@ -10,6 +10,8 @@ import Foundation
 
 protocol LoginScreenCoordinatorProtocol {
   static func createModule() -> LoginScreenViewProtocol
+  
+  func presentGoogleSignInFrom(_ view: LoginScreenViewProtocol)
 }
 
 protocol LoginScreenViewProtocol {
@@ -17,6 +19,8 @@ protocol LoginScreenViewProtocol {
 }
 
 protocol LoginScreenViewModelProtocol {
-  var coordinator: LoginScreenCoordinatorProtocol? { get set } 
+  var coordinator: LoginScreenCoordinatorProtocol? { get set }
+  
   func viewDidLoad()
+  func presentGoogleSignInFrom(_ view: LoginScreenViewProtocol)
 }

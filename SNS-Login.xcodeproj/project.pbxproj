@@ -16,6 +16,24 @@
 		826EAB16240CC628008F31B5 /* LoginScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EAB12240CC628008F31B5 /* LoginScreenCoordinator.swift */; };
 		826EAB17240CC628008F31B5 /* LoginScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EAB13240CC628008F31B5 /* LoginScreenViewModel.swift */; };
 		826EAB18240CC628008F31B5 /* LoginScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EAB14240CC628008F31B5 /* LoginScreenProtocols.swift */; };
+		826EAB20240CF49D008F31B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB1F240CF49D008F31B5 /* GoogleService-Info.plist */; };
+		826EAB33240CFCFE008F31B5 /* google-sign-in-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB22240CFCFC008F31B5 /* google-sign-in-0.png */; };
+		826EAB34240CFCFE008F31B5 /* google-sign-in-11.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB23240CFCFC008F31B5 /* google-sign-in-11.png */; };
+		826EAB35240CFCFE008F31B5 /* google-sign-in-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB24240CFCFC008F31B5 /* google-sign-in-7.png */; };
+		826EAB36240CFCFE008F31B5 /* google-sign-in-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB25240CFCFC008F31B5 /* google-sign-in-1.png */; };
+		826EAB37240CFCFE008F31B5 /* google-sign-in-10.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB26240CFCFC008F31B5 /* google-sign-in-10.png */; };
+		826EAB38240CFCFE008F31B5 /* google-sign-in-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB27240CFCFC008F31B5 /* google-sign-in-5.png */; };
+		826EAB39240CFCFE008F31B5 /* google-sign-in-13.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB28240CFCFD008F31B5 /* google-sign-in-13.png */; };
+		826EAB3A240CFCFE008F31B5 /* google-sign-in-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB29240CFCFD008F31B5 /* google-sign-in-3.png */; };
+		826EAB3B240CFCFE008F31B5 /* google-sign-in-9.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB2A240CFCFD008F31B5 /* google-sign-in-9.png */; };
+		826EAB3C240CFCFE008F31B5 /* google-sign-in-12.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB2B240CFCFD008F31B5 /* google-sign-in-12.png */; };
+		826EAB3D240CFCFE008F31B5 /* google-sign-in-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB2C240CFCFD008F31B5 /* google-sign-in-4.png */; };
+		826EAB3E240CFCFE008F31B5 /* google-sign-in-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB2D240CFCFD008F31B5 /* google-sign-in-2.png */; };
+		826EAB3F240CFCFE008F31B5 /* google-sign-in-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB2E240CFCFD008F31B5 /* google-sign-in-15.png */; };
+		826EAB40240CFCFE008F31B5 /* google-sign-in-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB2F240CFCFD008F31B5 /* google-sign-in-6.png */; };
+		826EAB41240CFCFE008F31B5 /* google-sign-in-14.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB30240CFCFD008F31B5 /* google-sign-in-14.png */; };
+		826EAB42240CFCFE008F31B5 /* google-sign-in-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB31240CFCFD008F31B5 /* google-sign-in-8.png */; };
+		826EAB43240CFCFE008F31B5 /* google-sign-in-16.png in Resources */ = {isa = PBXBuildFile; fileRef = 826EAB32240CFCFD008F31B5 /* google-sign-in-16.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +48,24 @@
 		826EAB12240CC628008F31B5 /* LoginScreenCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenCoordinator.swift; sourceTree = "<group>"; };
 		826EAB13240CC628008F31B5 /* LoginScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewModel.swift; sourceTree = "<group>"; };
 		826EAB14240CC628008F31B5 /* LoginScreenProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenProtocols.swift; sourceTree = "<group>"; };
+		826EAB1F240CF49D008F31B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		826EAB22240CFCFC008F31B5 /* google-sign-in-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-0.png"; sourceTree = "<group>"; };
+		826EAB23240CFCFC008F31B5 /* google-sign-in-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-11.png"; sourceTree = "<group>"; };
+		826EAB24240CFCFC008F31B5 /* google-sign-in-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-7.png"; sourceTree = "<group>"; };
+		826EAB25240CFCFC008F31B5 /* google-sign-in-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-1.png"; sourceTree = "<group>"; };
+		826EAB26240CFCFC008F31B5 /* google-sign-in-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-10.png"; sourceTree = "<group>"; };
+		826EAB27240CFCFC008F31B5 /* google-sign-in-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-5.png"; sourceTree = "<group>"; };
+		826EAB28240CFCFD008F31B5 /* google-sign-in-13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-13.png"; sourceTree = "<group>"; };
+		826EAB29240CFCFD008F31B5 /* google-sign-in-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-3.png"; sourceTree = "<group>"; };
+		826EAB2A240CFCFD008F31B5 /* google-sign-in-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-9.png"; sourceTree = "<group>"; };
+		826EAB2B240CFCFD008F31B5 /* google-sign-in-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-12.png"; sourceTree = "<group>"; };
+		826EAB2C240CFCFD008F31B5 /* google-sign-in-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-4.png"; sourceTree = "<group>"; };
+		826EAB2D240CFCFD008F31B5 /* google-sign-in-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-2.png"; sourceTree = "<group>"; };
+		826EAB2E240CFCFD008F31B5 /* google-sign-in-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-15.png"; sourceTree = "<group>"; };
+		826EAB2F240CFCFD008F31B5 /* google-sign-in-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-6.png"; sourceTree = "<group>"; };
+		826EAB30240CFCFD008F31B5 /* google-sign-in-14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-14.png"; sourceTree = "<group>"; };
+		826EAB31240CFCFD008F31B5 /* google-sign-in-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-8.png"; sourceTree = "<group>"; };
+		826EAB32240CFCFD008F31B5 /* google-sign-in-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-sign-in-16.png"; sourceTree = "<group>"; };
 		9FCAEF47AFCB890A5C59D1B5 /* Pods-SNS-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS-Login.release.xcconfig"; path = "Target Support Files/Pods-SNS-Login/Pods-SNS-Login.release.xcconfig"; sourceTree = "<group>"; };
 		A9DA37061B5FD87B65D57232 /* Pods_SNS_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNS_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -49,6 +85,7 @@
 		826EAAF0240CC25B008F31B5 = {
 			isa = PBXGroup;
 			children = (
+				826EAB21240CFCED008F31B5 /* README */,
 				826EAAFB240CC25B008F31B5 /* SNS-Login */,
 				826EAAFA240CC25B008F31B5 /* Products */,
 				B30D0B3130868409CF179D7A /* Pods */,
@@ -73,6 +110,7 @@
 				826EAB05240CC25E008F31B5 /* Assets.xcassets */,
 				826EAB07240CC25E008F31B5 /* LaunchScreen.storyboard */,
 				826EAB0A240CC25E008F31B5 /* Info.plist */,
+				826EAB1F240CF49D008F31B5 /* GoogleService-Info.plist */,
 			);
 			path = "SNS-Login";
 			sourceTree = "<group>";
@@ -86,6 +124,30 @@
 				826EAB13240CC628008F31B5 /* LoginScreenViewModel.swift */,
 			);
 			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		826EAB21240CFCED008F31B5 /* README */ = {
+			isa = PBXGroup;
+			children = (
+				826EAB22240CFCFC008F31B5 /* google-sign-in-0.png */,
+				826EAB25240CFCFC008F31B5 /* google-sign-in-1.png */,
+				826EAB2D240CFCFD008F31B5 /* google-sign-in-2.png */,
+				826EAB29240CFCFD008F31B5 /* google-sign-in-3.png */,
+				826EAB2C240CFCFD008F31B5 /* google-sign-in-4.png */,
+				826EAB27240CFCFC008F31B5 /* google-sign-in-5.png */,
+				826EAB2F240CFCFD008F31B5 /* google-sign-in-6.png */,
+				826EAB24240CFCFC008F31B5 /* google-sign-in-7.png */,
+				826EAB31240CFCFD008F31B5 /* google-sign-in-8.png */,
+				826EAB2A240CFCFD008F31B5 /* google-sign-in-9.png */,
+				826EAB26240CFCFC008F31B5 /* google-sign-in-10.png */,
+				826EAB23240CFCFC008F31B5 /* google-sign-in-11.png */,
+				826EAB2B240CFCFD008F31B5 /* google-sign-in-12.png */,
+				826EAB28240CFCFD008F31B5 /* google-sign-in-13.png */,
+				826EAB30240CFCFD008F31B5 /* google-sign-in-14.png */,
+				826EAB2E240CFCFD008F31B5 /* google-sign-in-15.png */,
+				826EAB32240CFCFD008F31B5 /* google-sign-in-16.png */,
+			);
+			path = README;
 			sourceTree = "<group>";
 		};
 		B016989E601C5C23CE39FD3F /* Frameworks */ = {
@@ -117,6 +179,7 @@
 				826EAAF6240CC25B008F31B5 /* Frameworks */,
 				826EAAF7240CC25B008F31B5 /* Resources */,
 				F0E632466BB1753B2C224AAA /* [CP] Embed Pods Frameworks */,
+				4B687B8398D3451429AEC998 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -165,14 +228,49 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				826EAB3A240CFCFE008F31B5 /* google-sign-in-3.png in Resources */,
+				826EAB36240CFCFE008F31B5 /* google-sign-in-1.png in Resources */,
+				826EAB3E240CFCFE008F31B5 /* google-sign-in-2.png in Resources */,
 				826EAB09240CC25E008F31B5 /* LaunchScreen.storyboard in Resources */,
+				826EAB3C240CFCFE008F31B5 /* google-sign-in-12.png in Resources */,
+				826EAB41240CFCFE008F31B5 /* google-sign-in-14.png in Resources */,
+				826EAB39240CFCFE008F31B5 /* google-sign-in-13.png in Resources */,
+				826EAB3D240CFCFE008F31B5 /* google-sign-in-4.png in Resources */,
+				826EAB42240CFCFE008F31B5 /* google-sign-in-8.png in Resources */,
+				826EAB34240CFCFE008F31B5 /* google-sign-in-11.png in Resources */,
+				826EAB35240CFCFE008F31B5 /* google-sign-in-7.png in Resources */,
+				826EAB43240CFCFE008F31B5 /* google-sign-in-16.png in Resources */,
 				826EAB06240CC25E008F31B5 /* Assets.xcassets in Resources */,
+				826EAB3F240CFCFE008F31B5 /* google-sign-in-15.png in Resources */,
+				826EAB37240CFCFE008F31B5 /* google-sign-in-10.png in Resources */,
+				826EAB40240CFCFE008F31B5 /* google-sign-in-6.png in Resources */,
+				826EAB3B240CFCFE008F31B5 /* google-sign-in-9.png in Resources */,
+				826EAB20240CF49D008F31B5 /* GoogleService-Info.plist in Resources */,
+				826EAB33240CFCFE008F31B5 /* google-sign-in-0.png in Resources */,
+				826EAB38240CFCFE008F31B5 /* google-sign-in-5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4B687B8398D3451429AEC998 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SNS-Login/Pods-SNS-Login-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SNS-Login/Pods-SNS-Login-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SNS-Login/Pods-SNS-Login-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		64872661116D15CBC4A73631 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
