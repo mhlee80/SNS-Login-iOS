@@ -72,7 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
 //    return false
 //  }
-  
+
+//  @available(iOS 9.0, *)
 //  func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
 //    // kakao login handle
 //    log.info("")
