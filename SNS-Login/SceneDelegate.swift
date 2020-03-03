@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -29,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // Release any resources associated with this scene that can be re-created the next time the scene connects.
     // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
   }
-
+  
   func sceneDidBecomeActive(_ scene: UIScene) {
     // Called when the scene has moved from an inactive state to an active state.
     // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
@@ -52,5 +53,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
 
 
+  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    if let openURLContext = URLContexts.first {
+      ApplicationDelegate.shared.application(UIApplication.shared,
+                                             open: openURLContext.url,
+                                             sourceApplication: openURLContext.options.sourceApplication,
+                                             annotation: openURLContext.options.annotation)
+    }
+  }
+  
+    // SceneDelegate.m #import <FBSDKCoreKit/FBSDKCoreKit.h> - (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts { UIOpenURLContext *openURLContext = URLContexts.allObjects.firstObject; if (openURLContext) { [[FBSDKApplicationDelegate sharedInstance] application:UIApplication.sharedApplication openURL:openURLContext.URL sourceApplication:openURLContext.options.sourceApplication annotation:openURLContext.options.annotation]; } // Add any custom logic here. }
 }
 

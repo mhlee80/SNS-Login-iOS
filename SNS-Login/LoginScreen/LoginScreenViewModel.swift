@@ -18,4 +18,8 @@ class LoginScreenViewModel: NSObject, LoginScreenViewModelProtocol {
   func presentGoogleSignInFrom(_ view: LoginScreenViewProtocol) {
     coordinator?.presentGoogleSignInFrom(view)
   }
+  
+  func presentFacebookLoginFrom(_ view: LoginScreenViewProtocol) {
+    coordinator?.presentFacebookLoginFrom(view)
+  }
 }

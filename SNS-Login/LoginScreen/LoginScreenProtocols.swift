@@ -12,6 +12,7 @@ protocol LoginScreenCoordinatorProtocol {
   static func createModule() -> LoginScreenViewProtocol
   
   func presentGoogleSignInFrom(_ view: LoginScreenViewProtocol)
+  func presentFacebookLoginFrom(_ view: LoginScreenViewProtocol)
 }
 
 protocol LoginScreenViewProtocol {
@@ -23,4 +24,5 @@ protocol LoginScreenViewModelProtocol {
   
   func viewDidLoad()
   func presentGoogleSignInFrom(_ view: LoginScreenViewProtocol)
+  func presentFacebookLoginFrom(_ view: LoginScreenViewProtocol)
 }

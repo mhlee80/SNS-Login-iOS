@@ -10,6 +10,7 @@ import UIKit
 import SwiftyBeaver
 import Firebase
 import GoogleSignIn
+import FBSDKCoreKit
 
 let log = SwiftyBeaver.self
 
@@ -19,9 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     log.addDestination(ConsoleDestination())
+    
+    // Google Login
     FirebaseApp.configure()
     GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
     GIDSignIn.sharedInstance()?.delegate = self
+    
+    // Facebook Login
+    ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+    
     return true
   }
 
@@ -39,9 +46,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
   }
   
+
+  // AppDelegate.m #import <FBSDKCoreKit/FBSDKCoreKit.h> - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions]; // Add any custom logic here. return YES; } - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options { BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey] ]; // Add any custom logic here. return handled; }
+      
+    
   @available(iOS 9.0, *)
   func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-    return GIDSignIn.sharedInstance().handle(url)
+    let googleSignInHandled = GIDSignIn.sharedInstance().handle(url)
+    
+    let facebookSignInHandled = ApplicationDelegate.shared.application(
+      application,
+      open: url,
+      sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+      annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+    
+    return googleSignInHandled || facebookSignInHandled
   }
 }
 

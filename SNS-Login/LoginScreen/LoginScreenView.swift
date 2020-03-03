@@ -20,6 +20,15 @@ class LoginScreenView: UIViewController, LoginScreenViewProtocol {
     }
   }
   
+  private lazy var titleLabel: UILabel = {
+    let v = UILabel()
+    v.backgroundColor = .white
+    v.textColor = .black
+    v.font = .systemFont(ofSize: 48)
+    v.text = "SNS Login"
+    return v
+  }()
+  
   private lazy var googleSignInButton: UIButton = {
     let v = UIButton()
     v.backgroundColor = .white
@@ -32,16 +41,41 @@ class LoginScreenView: UIViewController, LoginScreenViewProtocol {
     return v
   }()
   
+  private lazy var facebookLoginButton: UIButton = {
+    let v = UIButton()
+    v.backgroundColor = .white
+    v.layer.borderWidth = 1
+    v.layer.cornerRadius = 24
+    v.layer.borderColor = UIColor.black.cgColor
+    v.setTitleColor(.black, for: .normal)
+    v.titleLabel?.font = .systemFont(ofSize: 20)
+    v.setTitle("Facebook Login", for: .normal)
+    return v
+  }()
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     view.backgroundColor = .white
     
+    view.addSubview(titleLabel)
     view.addSubview(googleSignInButton)
+    view.addSubview(facebookLoginButton)
+    
+    titleLabel.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.top.equalToSuperview().offset(100)
+    }
     
     googleSignInButton.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
-      make.centerY.equalToSuperview()
+      make.top.equalTo(view.snp.centerY)
+      make.size.equalTo(CGSize(width: 230, height: 48))
+    }
+    
+    facebookLoginButton.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.top.equalTo(googleSignInButton.snp.bottom).offset(20)
       make.size.equalTo(CGSize(width: 230, height: 48))
     }
     
@@ -55,6 +89,10 @@ class LoginScreenView: UIViewController, LoginScreenViewProtocol {
     
     googleSignInButton.rx.tap.subscribe(onNext: { [weak self] in
         self?.viewModel?.presentGoogleSignInFrom(self!)
+    }).disposed(by: disposeBag)
+    
+    facebookLoginButton.rx.tap.subscribe(onNext: { [weak self] in
+        self?.viewModel?.presentFacebookLoginFrom(self!)
     }).disposed(by: disposeBag)
   }
 }
