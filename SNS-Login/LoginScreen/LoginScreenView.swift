@@ -53,6 +53,18 @@ class LoginScreenView: UIViewController, LoginScreenViewProtocol {
     return v
   }()
 
+  private lazy var kakaoLoginButton: UIButton = {
+    let v = UIButton()
+    v.backgroundColor = .white
+    v.layer.borderWidth = 1
+    v.layer.cornerRadius = 24
+    v.layer.borderColor = UIColor.black.cgColor
+    v.setTitleColor(.black, for: .normal)
+    v.titleLabel?.font = .systemFont(ofSize: 20)
+    v.setTitle("Kakao Login", for: .normal)
+    return v
+  }()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
@@ -61,6 +73,7 @@ class LoginScreenView: UIViewController, LoginScreenViewProtocol {
     view.addSubview(titleLabel)
     view.addSubview(googleSignInButton)
     view.addSubview(facebookLoginButton)
+    view.addSubview(kakaoLoginButton)
     
     titleLabel.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
@@ -79,6 +92,12 @@ class LoginScreenView: UIViewController, LoginScreenViewProtocol {
       make.size.equalTo(CGSize(width: 230, height: 48))
     }
     
+    kakaoLoginButton.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.top.equalTo(facebookLoginButton.snp.bottom).offset(20)
+      make.size.equalTo(CGSize(width: 230, height: 48))
+    }
+    
     DispatchQueue.main.async { [weak self] in
       self?.viewModel?.viewDidLoad()
     }
@@ -93,6 +112,10 @@ class LoginScreenView: UIViewController, LoginScreenViewProtocol {
     
     facebookLoginButton.rx.tap.subscribe(onNext: { [weak self] in
         self?.viewModel?.presentFacebookLoginFrom(self!)
+    }).disposed(by: disposeBag)
+    
+    kakaoLoginButton.rx.tap.subscribe(onNext: { [weak self] in
+        self?.viewModel?.presentKakaoLoginFrom(self!)
     }).disposed(by: disposeBag)
   }
 }

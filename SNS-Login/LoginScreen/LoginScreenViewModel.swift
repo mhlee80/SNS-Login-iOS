@@ -22,4 +22,8 @@ class LoginScreenViewModel: NSObject, LoginScreenViewModelProtocol {
   func presentFacebookLoginFrom(_ view: LoginScreenViewProtocol) {
     coordinator?.presentFacebookLoginFrom(view)
   }
+  
+  func presentKakaoLoginFrom(_ view: LoginScreenViewProtocol) {
+    coordinator?.presentKakaoLoginFrom(view)
+  }
 }

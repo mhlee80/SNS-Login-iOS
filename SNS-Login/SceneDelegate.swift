@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import KakaoOpenSDK
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -55,13 +56,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
     if let openURLContext = URLContexts.first {
+      
+      // facebook login url handle
       ApplicationDelegate.shared.application(UIApplication.shared,
                                              open: openURLContext.url,
                                              sourceApplication: openURLContext.options.sourceApplication,
                                              annotation: openURLContext.options.annotation)
+      
+      // kakao login url handle
+      KOSession.handleOpen(openURLContext.url)
     }
   }
-  
-    // SceneDelegate.m #import <FBSDKCoreKit/FBSDKCoreKit.h> - (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts { UIOpenURLContext *openURLContext = URLContexts.allObjects.firstObject; if (openURLContext) { [[FBSDKApplicationDelegate sharedInstance] application:UIApplication.sharedApplication openURL:openURLContext.URL sourceApplication:openURLContext.options.sourceApplication annotation:openURLContext.options.annotation]; } // Add any custom logic here. }
 }
 

@@ -11,6 +11,7 @@ import SwiftyBeaver
 import Firebase
 import GoogleSignIn
 import FBSDKCoreKit
+import KakaoOpenSDK
 
 let log = SwiftyBeaver.self
 
@@ -46,22 +47,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
   }
   
-
-  // AppDelegate.m #import <FBSDKCoreKit/FBSDKCoreKit.h> - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions]; // Add any custom logic here. return YES; } - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options { BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey] ]; // Add any custom logic here. return handled; }
-      
-    
-  @available(iOS 9.0, *)
-  func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-    let googleSignInHandled = GIDSignIn.sharedInstance().handle(url)
-    
-    let facebookSignInHandled = ApplicationDelegate.shared.application(
-      application,
-      open: url,
-      sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-      annotation: options[UIApplication.OpenURLOptionsKey.annotation])
-    
-    return googleSignInHandled || facebookSignInHandled
-  }
+//  @available(iOS 9.0, *)
+//  func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+//    log.info("")
+//
+//    // google sign-in handle
+//    if GIDSignIn.sharedInstance().handle(url) {
+//      return true
+//    }
+//
+//    // facebook login handle
+//    if ApplicationDelegate.shared.application(
+//      application,
+//      open: url,
+//      sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+//      annotation: options[UIApplication.OpenURLOptionsKey.annotation]) {
+//      return true
+//    }
+//
+//    // kakao login handle
+//    if KOSession.handleOpen(url) {
+//      return true
+//    }
+//
+//    return false
+//  }
+  
+//  func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+//    // kakao login handle
+//    log.info("")
+//    if KOSession.handleOpen(url) {
+//      return true
+//    }
+//
+//    return false
+//  }
+  
+//  func applicationDidEnterBackground(_ application: UIApplication) {
+//    log.info("")
+//    KOSession.handleDidEnterBackground()
+//  }
+  
+//  func applicationDidBecomeActive(_ application: UIApplication) {
+//    log.info("")
+//    KOSession.handleDidBecomeActive()
+//  }
 }
 
 extension AppDelegate: GIDSignInDelegate {
