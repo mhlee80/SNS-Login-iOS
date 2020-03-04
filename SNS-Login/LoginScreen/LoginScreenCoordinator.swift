@@ -24,7 +24,7 @@ class LoginScreenCoordinator: NSObject, LoginScreenCoordinatorProtocol {
     return view
   }
   
-  func presentGoogleSignInFrom(_ view: LoginScreenViewProtocol) {
+  func presentGoogleLoginFrom(_ view: LoginScreenViewProtocol) {
     guard let sourceView = view as? UIViewController else { return }
     
     GIDSignIn.sharedInstance()?.presentingViewController = sourceView
