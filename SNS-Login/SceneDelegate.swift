@@ -64,10 +64,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // facebook login
     FacebookLoginService.shared.handleScene(scene, openURLContexts: URLContexts)
     
-    if let openURLContext = URLContexts.first {
-      // kakao login
-      KOSession.handleOpen(openURLContext.url)
-    }
+    // kakao login
+    KakaoLoginService.shared.handleScene(scene, openURLContexts: URLContexts)
   }
 }
 

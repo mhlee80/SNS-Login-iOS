@@ -25,6 +25,9 @@
 		82BF26892410D52000A9C78B /* FacebookLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26882410D52000A9C78B /* FacebookLoginService.swift */; };
 		82BF268B2410D6D000A9C78B /* FacebookLoginService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF268A2410D6D000A9C78B /* FacebookLoginService+Rx.swift */; };
 		82BF268D2410D81F00A9C78B /* FacebookLoginService+LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF268C2410D81F00A9C78B /* FacebookLoginService+LoginScreen.swift */; };
+		82BF26912410DF5C00A9C78B /* KakaoLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26902410DF5C00A9C78B /* KakaoLoginService.swift */; };
+		82BF26932410E47C00A9C78B /* KakaoLoginService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26922410E47C00A9C78B /* KakaoLoginService+Rx.swift */; };
+		82BF26952410E4FC00A9C78B /* KakaoLoginService+LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26942410E4FC00A9C78B /* KakaoLoginService+LoginScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		82BF26882410D52000A9C78B /* FacebookLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginService.swift; sourceTree = "<group>"; };
 		82BF268A2410D6D000A9C78B /* FacebookLoginService+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacebookLoginService+Rx.swift"; sourceTree = "<group>"; };
 		82BF268C2410D81F00A9C78B /* FacebookLoginService+LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacebookLoginService+LoginScreen.swift"; sourceTree = "<group>"; };
+		82BF26902410DF5C00A9C78B /* KakaoLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginService.swift; sourceTree = "<group>"; };
+		82BF26922410E47C00A9C78B /* KakaoLoginService+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KakaoLoginService+Rx.swift"; sourceTree = "<group>"; };
+		82BF26942410E4FC00A9C78B /* KakaoLoginService+LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KakaoLoginService+LoginScreen.swift"; sourceTree = "<group>"; };
 		9FCAEF47AFCB890A5C59D1B5 /* Pods-SNS-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS-Login.release.xcconfig"; path = "Target Support Files/Pods-SNS-Login/Pods-SNS-Login.release.xcconfig"; sourceTree = "<group>"; };
 		A9DA37061B5FD87B65D57232 /* Pods_SNS_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNS_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,6 +114,7 @@
 				826EAB13240CC628008F31B5 /* LoginScreenViewModel.swift */,
 				82BF268024108FDE00A9C78B /* GoogleLoginService+LoginScreen.swift */,
 				82BF268C2410D81F00A9C78B /* FacebookLoginService+LoginScreen.swift */,
+				82BF26942410E4FC00A9C78B /* KakaoLoginService+LoginScreen.swift */,
 			);
 			path = LoginScreen;
 			sourceTree = "<group>";
@@ -119,6 +126,8 @@
 				82BF26862410D23200A9C78B /* GoogleLoginService+Rx.swift */,
 				82BF26882410D52000A9C78B /* FacebookLoginService.swift */,
 				82BF268A2410D6D000A9C78B /* FacebookLoginService+Rx.swift */,
+				82BF26902410DF5C00A9C78B /* KakaoLoginService.swift */,
+				82BF26922410E47C00A9C78B /* KakaoLoginService+Rx.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -278,9 +287,12 @@
 				826EAB15240CC628008F31B5 /* LoginScreenView.swift in Sources */,
 				826EAB18240CC628008F31B5 /* LoginScreenProtocols.swift in Sources */,
 				82BF26872410D23200A9C78B /* GoogleLoginService+Rx.swift in Sources */,
+				82BF26932410E47C00A9C78B /* KakaoLoginService+Rx.swift in Sources */,
 				82BF268124108FDE00A9C78B /* GoogleLoginService+LoginScreen.swift in Sources */,
 				826EAB17240CC628008F31B5 /* LoginScreenViewModel.swift in Sources */,
+				82BF26952410E4FC00A9C78B /* KakaoLoginService+LoginScreen.swift in Sources */,
 				82BF268D2410D81F00A9C78B /* FacebookLoginService+LoginScreen.swift in Sources */,
+				82BF26912410DF5C00A9C78B /* KakaoLoginService.swift in Sources */,
 				826EAB16240CC628008F31B5 /* LoginScreenCoordinator.swift in Sources */,
 				826EAAFD240CC25B008F31B5 /* AppDelegate.swift in Sources */,
 				82BF26892410D52000A9C78B /* FacebookLoginService.swift in Sources */,

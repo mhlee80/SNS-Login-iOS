@@ -24,33 +24,4 @@ class LoginScreenCoordinator: NSObject, LoginScreenCoordinatorProtocol {
 
     return view
   }
-
-  func presentKakaoLoginFrom(_ view: LoginScreenViewProtocol) {
-    guard let sourceView = view as? UIViewController else { return }
-    
-    guard let session = KOSession.shared() else {
-        return
-    }
-
-    if session.isOpen() {
-        session.close()
-    }
-
-    session.presentingViewController = sourceView
-    
-    session.open { error in
-      if !session.isOpen() {
-        if let error = error {
-          log.info(error)
-          return
-        }
-        log.info("unknown error")
-        return
-      }
-      
-      if let token = session.token?.accessToken {
-        log.info("access token: \(token)")
-      }
-    }
-  }
 }

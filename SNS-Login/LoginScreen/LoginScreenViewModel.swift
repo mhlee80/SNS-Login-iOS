@@ -59,6 +59,10 @@ class LoginScreenViewModel: NSObject, LoginScreenViewModelProtocol {
   }
   
   func presentKakaoLoginFrom(_ view: LoginScreenViewProtocol) {
-    coordinator?.presentKakaoLoginFrom(view)
+    KakaoLoginService.shared.rx.login(from: view).subscribe(onNext: { token in
+      log.info("kakao login success: \(token)")
+    }, onError: { error in
+      log.info("error: \(error)")
+    }).disposed(by: disposeBag)
   }
 }

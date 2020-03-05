@@ -8,8 +8,6 @@
 
 import UIKit
 import SwiftyBeaver
-import FBSDKCoreKit
-import KakaoOpenSDK
 
 let log = SwiftyBeaver.self
 
@@ -31,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Facebook Login
     FacebookLoginService.shared.handleApplication(application,
                                                   didFinishLaunchingWithOptions: launchOptions)
+    
+    // Kakao Login
+    KakaoLoginService.shared.handleApplication(application,
+                                               didFinishLaunchingWithOptions: launchOptions)
     
     if #available(iOS 9, *) {
       window = UIWindow()
@@ -56,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // kakao login
-    if KOSession.handleOpen(url) {
+    if KakaoLoginService.shared.handleApplication(application, open: url, options: options) {
       return true
     }
 
@@ -66,13 +68,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   @available(iOS 9.0, *)
   func applicationDidEnterBackground(_ application: UIApplication) {
     log.info("")
-    KOSession.handleDidEnterBackground()
+    KakaoLoginService.shared.handleApplicationDidEnterBackground(application)
   }
   
   @available(iOS 9.0, *)
   func applicationDidBecomeActive(_ application: UIApplication) {
     log.info("")
-    KOSession.handleDidBecomeActive()
+    KakaoLoginService.shared.handleApplicationDidBecomeActive(application)
   }
   
   // MARK: UISceneSession Lifecycle
