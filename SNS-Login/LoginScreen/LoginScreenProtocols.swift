@@ -13,7 +13,6 @@ import Foundation
 protocol LoginScreenCoordinatorProtocol {
   static func createModule() -> LoginScreenViewProtocol
   
-  func presentFacebookLoginFrom(_ view: LoginScreenViewProtocol)
   func presentKakaoLoginFrom(_ view: LoginScreenViewProtocol)
 }
 

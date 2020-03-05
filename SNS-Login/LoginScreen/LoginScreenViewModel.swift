@@ -46,7 +46,16 @@ class LoginScreenViewModel: NSObject, LoginScreenViewModelProtocol {
   }
   
   func presentFacebookLoginFrom(_ view: LoginScreenViewProtocol) {
-    coordinator?.presentFacebookLoginFrom(view)
+    FacebookLoginService.shared.rx.login(from: view, permissions: ["public_profile"]).subscribe(onNext: { result in
+      if result.isCancelled {
+        log.info("facebook login is canncelled")
+        return
+      }
+      
+      log.info("facebook login success: \(result)")
+    }, onError: { error in
+      log.info("error: \(error)")
+    }).disposed(by: disposeBag)
   }
   
   func presentKakaoLoginFrom(_ view: LoginScreenViewProtocol) {

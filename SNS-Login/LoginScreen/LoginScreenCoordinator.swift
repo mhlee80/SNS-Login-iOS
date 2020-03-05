@@ -24,23 +24,7 @@ class LoginScreenCoordinator: NSObject, LoginScreenCoordinatorProtocol {
 
     return view
   }
-    
-  func presentFacebookLoginFrom(_ view: LoginScreenViewProtocol) {
-    guard let sourceView = view as? UIViewController else { return }
-    
-    let loginManager = LoginManager()
-    loginManager.logIn(permissions: ["public_profile"], from: sourceView) { result, error in
-      if let error = error {
-        log.info(error)
-        return
-      }
-      
-      if let result = result {
-        log.info("facebook login: \(result)")
-      }
-    }
-  }
-  
+
   func presentKakaoLoginFrom(_ view: LoginScreenViewProtocol) {
     guard let sourceView = view as? UIViewController else { return }
     
