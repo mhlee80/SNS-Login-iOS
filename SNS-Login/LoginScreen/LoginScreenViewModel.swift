@@ -21,7 +21,7 @@ class LoginScreenViewModel: NSObject, LoginScreenViewModelProtocol {
   private let disposeBag = DisposeBag()
   
   func presentGoogleLoginFrom(_ view: LoginScreenViewProtocol) {
-    GoogleLoginService.shared.rxGoogleSignIn(from: view).flatMap { user -> Observable<AuthDataResult> in
+    GoogleLoginService.shared.rx.googleSignIn(from: view).flatMap { user -> Observable<AuthDataResult> in
       log.info("google login success: \(user.profile.email ?? "nil")")
       
 //      let userId = user.userID
@@ -37,7 +37,7 @@ class LoginScreenViewModel: NSObject, LoginScreenViewModelProtocol {
 //      log.info("familyName: \(familyName ?? "nil")")
 //      log.info("email: \(email ?? "nil")")
 
-      return GoogleLoginService.shared.rxFirebaseSignIn(authentication: user.authentication)
+      return GoogleLoginService.shared.rx.firebaseSignIn(authentication: user.authentication)
     }.subscribe(onNext: { authResult in
       log.info("firebase login success: \(authResult.user.email ?? "nil")")
     }, onError: { error in

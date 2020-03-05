@@ -88,35 +88,3 @@ extension GoogleLoginService: GIDSignInDelegate {
     googleUserDisconnected.onNext((user, error))
   }
 }
-
-extension GoogleLoginService {
-  func rxGoogleSignIn(from view: UIViewController) -> Observable<GIDGoogleUser> {
-    return Observable<GIDGoogleUser>.create { [weak self] observer -> Disposable in
-      self?.googleSignIn(from: view) { user, error in
-        if let error = error {
-          observer.onError(error)
-          return
-        }
-        
-        observer.onNext(user!)
-        observer.onCompleted()
-      }
-      return Disposables.create()
-    }
-  }
-  
-  func rxFirebaseSignIn(authentication: GIDAuthentication) -> Observable<AuthDataResult> {
-    return Observable<AuthDataResult>.create { [weak self] observer -> Disposable in
-      self?.firebaseSignIn(authentication: authentication) { authResult, error in
-        if let error = error {
-          observer.onError(error)
-          return
-        }
-        
-        observer.onNext(authResult!)
-        observer.onCompleted()
-      }
-      return Disposables.create()
-    }
-  }
-}
