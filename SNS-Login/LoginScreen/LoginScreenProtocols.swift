@@ -8,10 +8,11 @@
 
 import Foundation
 
+//typealias Completion<T> = ((T?, Error?) -> Void)
+
 protocol LoginScreenCoordinatorProtocol {
   static func createModule() -> LoginScreenViewProtocol
   
-  func presentGoogleLoginFrom(_ view: LoginScreenViewProtocol)
   func presentFacebookLoginFrom(_ view: LoginScreenViewProtocol)
   func presentKakaoLoginFrom(_ view: LoginScreenViewProtocol)
 }

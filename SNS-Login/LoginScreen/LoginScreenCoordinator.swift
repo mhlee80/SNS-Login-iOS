@@ -11,6 +11,7 @@ import UIKit
 import GoogleSignIn
 import FBSDKLoginKit
 import KakaoOpenSDK
+import RxSwift
 
 class LoginScreenCoordinator: NSObject, LoginScreenCoordinatorProtocol {
   static func createModule() -> LoginScreenViewProtocol {
@@ -23,14 +24,7 @@ class LoginScreenCoordinator: NSObject, LoginScreenCoordinatorProtocol {
 
     return view
   }
-  
-  func presentGoogleLoginFrom(_ view: LoginScreenViewProtocol) {
-    guard let sourceView = view as? UIViewController else { return }
     
-    GIDSignIn.sharedInstance()?.presentingViewController = sourceView
-    GIDSignIn.sharedInstance()?.signIn()
-  }
-  
   func presentFacebookLoginFrom(_ view: LoginScreenViewProtocol) {
     guard let sourceView = view as? UIViewController else { return }
     

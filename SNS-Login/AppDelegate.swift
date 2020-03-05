@@ -8,8 +8,6 @@
 
 import UIKit
 import SwiftyBeaver
-import Firebase
-import GoogleSignIn
 import FBSDKCoreKit
 import KakaoOpenSDK
 
@@ -27,9 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     log.info("")
     
     // Google Login
-    FirebaseApp.configure()
-    GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
-    GIDSignIn.sharedInstance()?.delegate = self
+    GoogleLoginService.shared.handleApplicationDidFinishLaunchingWithOptions()
     
     // Facebook Login
     ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -48,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     log.info("")
 
     // google sign-in
-    if GIDSignIn.sharedInstance().handle(url) {
+    if GoogleLoginService.shared.handleApplicationOpenURL(url) {
       return true
     }
 
@@ -94,47 +90,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the user discards a scene session.
     // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-  }
-}
-
-extension AppDelegate: GIDSignInDelegate {
-  func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-    if let error = error {
-      log.info("error: \(error)")
-      return
-    }
-
-    let userId = user.userID
-    let idToken = user.authentication.idToken
-    let fullName = user.profile.name
-    let givenName = user.profile.givenName
-    let familyName = user.profile.familyName
-    let email = user.profile.email
-    
-    log.info("userId: \(userId ?? "nil")")
-    log.info("idToken: \(idToken ?? "nil")")
-    log.info("fullName: \(fullName ?? "nil")")
-    log.info("givenName: \(givenName ?? "nil")")
-    log.info("familyName: \(familyName ?? "nil")")
-    log.info("email: \(email ?? "nil")")
-    
-    guard let authentication = user.authentication else { return }
-    let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                      accessToken: authentication.accessToken)
-    log.info("credential: \(credential)")
-    
-    // firebase 인증
-    Auth.auth().signIn(with: credential) { (authResult, error) in
-      if let error = error {
-        log.info("error: \(error)")
-        return
-      }
-    }
-  }
-  func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-    // Perform any operations when the user disconnects from app here.
-    if let error = error {
-      log.info("error: \(error))")
-    }
   }
 }

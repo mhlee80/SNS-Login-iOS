@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GoogleSignIn
 import FBSDKCoreKit
 import KakaoOpenSDK
 
@@ -58,11 +57,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
     log.info("")
+    
+    // google sign-in
+    GoogleLoginService.shared.handleSceneOpenURLContexts(URLContexts)
+    
     if let openURLContext = URLContexts.first {
-      
-      // google sign-in
-      GIDSignIn.sharedInstance().handle(openURLContext.url)
-      
       // facebook login
       ApplicationDelegate.shared.application(UIApplication.shared,
                                              open: openURLContext.url,

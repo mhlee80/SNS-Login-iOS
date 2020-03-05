@@ -19,6 +19,8 @@
 		82BF2632240E163200A9C78B /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BF2631240E163200A9C78B /* KakaoOpenSDK.framework */; };
 		82BF2678240F27F600A9C78B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 82BF2677240F27F600A9C78B /* README.md */; };
 		82BF267A240F2EBF00A9C78B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82BF2679240F2EBF00A9C78B /* GoogleService-Info.plist */; };
+		82BF267C240F3E7500A9C78B /* GoogleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF267B240F3E7500A9C78B /* GoogleLoginService.swift */; };
+		82BF268124108FDE00A9C78B /* GoogleLoginService+LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF268024108FDE00A9C78B /* GoogleLoginService+LoginScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		82BF2631240E163200A9C78B /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		82BF2677240F27F600A9C78B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		82BF2679240F2EBF00A9C78B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		82BF267B240F3E7500A9C78B /* GoogleLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginService.swift; sourceTree = "<group>"; };
+		82BF268024108FDE00A9C78B /* GoogleLoginService+LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleLoginService+LoginScreen.swift"; sourceTree = "<group>"; };
 		9FCAEF47AFCB890A5C59D1B5 /* Pods-SNS-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS-Login.release.xcconfig"; path = "Target Support Files/Pods-SNS-Login/Pods-SNS-Login.release.xcconfig"; sourceTree = "<group>"; };
 		A9DA37061B5FD87B65D57232 /* Pods_SNS_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNS_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,6 +79,7 @@
 		826EAAFB240CC25B008F31B5 /* SNS-Login */ = {
 			isa = PBXGroup;
 			children = (
+				82BF267D24107B9E00A9C78B /* Services */,
 				826EAB10240CC616008F31B5 /* LoginScreen */,
 				826EAAFC240CC25B008F31B5 /* AppDelegate.swift */,
 				826EAAFE240CC25B008F31B5 /* SceneDelegate.swift */,
@@ -93,8 +98,17 @@
 				826EAB12240CC628008F31B5 /* LoginScreenCoordinator.swift */,
 				826EAB11240CC628008F31B5 /* LoginScreenView.swift */,
 				826EAB13240CC628008F31B5 /* LoginScreenViewModel.swift */,
+				82BF268024108FDE00A9C78B /* GoogleLoginService+LoginScreen.swift */,
 			);
 			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		82BF267D24107B9E00A9C78B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				82BF267B240F3E7500A9C78B /* GoogleLoginService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B016989E601C5C23CE39FD3F /* Frameworks */ = {
@@ -251,9 +265,11 @@
 			files = (
 				826EAB15240CC628008F31B5 /* LoginScreenView.swift in Sources */,
 				826EAB18240CC628008F31B5 /* LoginScreenProtocols.swift in Sources */,
+				82BF268124108FDE00A9C78B /* GoogleLoginService+LoginScreen.swift in Sources */,
 				826EAB17240CC628008F31B5 /* LoginScreenViewModel.swift in Sources */,
 				826EAB16240CC628008F31B5 /* LoginScreenCoordinator.swift in Sources */,
 				826EAAFD240CC25B008F31B5 /* AppDelegate.swift in Sources */,
+				82BF267C240F3E7500A9C78B /* GoogleLoginService.swift in Sources */,
 				826EAAFF240CC25B008F31B5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
