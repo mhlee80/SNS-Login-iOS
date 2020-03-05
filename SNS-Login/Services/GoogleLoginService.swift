@@ -26,9 +26,9 @@ class GoogleLoginService: NSObject {
     
   let googleUserDisconnected = PublishSubject<(GIDGoogleUser, Error)>()
     
-//  private override init() {
-//    super.init()
-//  }
+  private override init() {
+    super.init()
+  }
   
   func handleApplicationDidFinishLaunchingWithOptions() {
     FirebaseApp.configure()
