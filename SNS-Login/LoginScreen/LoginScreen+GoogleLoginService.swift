@@ -1,5 +1,5 @@
 //
-//  GoogleLoginService+LoginScreen.swift
+//  LoginScreen+GoogleLoginService.swift
 //  SNS-Login
 //
 //  Created by mhlee on 2020/03/05.
