@@ -13,7 +13,7 @@ import Firebase
 import RxSwift
 
 class GoogleLoginService: NSObject {
-  typealias GoogleSignInArgs = (viewToPresent: UIViewController?, completion: GoogleSignInCompletion?)
+  typealias GoogleSignInArgs = (presentingView: UIViewController?, completion: GoogleSignInCompletion?)
   typealias GoogleSignInCompletion = ((GIDGoogleUser?, Error?) -> Void)
   
   typealias FirebaseSignInArgs = (authentication: GIDAuthentication?, completion: FirebaseSignInCompletion?)
@@ -58,7 +58,7 @@ class GoogleLoginService: NSObject {
   }
   
   private func handleGoogleSignIn() {
-    GIDSignIn.sharedInstance()?.presentingViewController = googleSignInArgs.viewToPresent
+    GIDSignIn.sharedInstance()?.presentingViewController = googleSignInArgs.presentingView
     GIDSignIn.sharedInstance()?.signIn()
   }
   
