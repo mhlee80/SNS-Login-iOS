@@ -40,6 +40,7 @@ class GoogleLoginService: NSObject {
     return GIDSignIn.sharedInstance().handle(url)
   }
   
+  @available(iOS 13, *)
   func handleSceneOpenURLContexts(_ URLContexts: Set<UIOpenURLContext>) {
     if let openURLContext = URLContexts.first {
       GIDSignIn.sharedInstance().handle(openURLContext.url)
