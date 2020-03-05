@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     log.info("")
     
     // Google Login
-    GoogleLoginService.shared.handleApplicationDidFinishLaunchingWithOptions()
+    GoogleLoginService.shared.handleApplication(application,
+                                                didFinishLaunchingWithOptions: launchOptions)
     
     // Facebook Login
     ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -44,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     log.info("")
 
     // google sign-in
-    if GoogleLoginService.shared.handleApplicationOpenURL(url) {
+    if GoogleLoginService.shared.handleApplication(application, open: url, options: options) {
       return true
     }
 

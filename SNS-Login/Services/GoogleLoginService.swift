@@ -30,23 +30,23 @@ class GoogleLoginService: NSObject {
     super.init()
   }
   
-  func handleApplicationDidFinishLaunchingWithOptions() {
+  func handleApplication(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
     FirebaseApp.configure()
     GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
     GIDSignIn.sharedInstance()?.delegate = self
   }
   
-  func handleApplicationOpenURL(_ url: URL) -> Bool {
+  func handleApplication(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
     return GIDSignIn.sharedInstance().handle(url)
   }
   
   @available(iOS 13, *)
-  func handleSceneOpenURLContexts(_ URLContexts: Set<UIOpenURLContext>) {
+  func handleScene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
     if let openURLContext = URLContexts.first {
       GIDSignIn.sharedInstance().handle(openURLContext.url)
     }
   }
-    
+  
   func googleSignIn(from view: UIViewController, completion: GoogleSignInCompletion?) {
     googleSignInArgs = (view, completion)
     handleGoogleSignIn()

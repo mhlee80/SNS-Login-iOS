@@ -59,7 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     log.info("")
     
     // google sign-in
-    GoogleLoginService.shared.handleSceneOpenURLContexts(URLContexts)
+    GoogleLoginService.shared.handleScene(scene, openURLContexts: URLContexts)
     
     if let openURLContext = URLContexts.first {
       // facebook login
