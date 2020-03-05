@@ -29,7 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                 didFinishLaunchingWithOptions: launchOptions)
     
     // Facebook Login
-    ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+    FacebookLoginService.shared.handleApplication(application,
+                                                  didFinishLaunchingWithOptions: launchOptions)
     
     if #available(iOS 9, *) {
       window = UIWindow()
@@ -50,14 +51,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // facebook login
-    if ApplicationDelegate.shared.application(
-      application,
-      open: url,
-      sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-      annotation: options[UIApplication.OpenURLOptionsKey.annotation]) {
+    if FacebookLoginService.shared.handleApplication(application, open: url, options: options) {
       return true
     }
-
+    
     // kakao login
     if KOSession.handleOpen(url) {
       return true

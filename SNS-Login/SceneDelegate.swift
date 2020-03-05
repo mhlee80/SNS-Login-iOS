@@ -61,13 +61,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // google sign-in
     GoogleLoginService.shared.handleScene(scene, openURLContexts: URLContexts)
     
+    // facebook login
+    FacebookLoginService.shared.handleScene(scene, openURLContexts: URLContexts)
+    
     if let openURLContext = URLContexts.first {
-      // facebook login
-      ApplicationDelegate.shared.application(UIApplication.shared,
-                                             open: openURLContext.url,
-                                             sourceApplication: openURLContext.options.sourceApplication,
-                                             annotation: openURLContext.options.annotation)
-
       // kakao login
       KOSession.handleOpen(openURLContext.url)
     }
