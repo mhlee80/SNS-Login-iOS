@@ -7,10 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import GoogleSignIn
 import Firebase
-import RxSwift
 
 extension GoogleLoginService {
   func firebaseSignIn(authentication: GIDAuthentication, completion: ((AuthDataResult?, Error?) -> Void)?) {
