@@ -13,18 +13,14 @@ import Firebase
 import RxSwift
 
 class GoogleLoginService: NSObject {
-  typealias GoogleSignInArgs = (presentingView: UIViewController?, completion: GoogleSignInCompletion?)
-  typealias GoogleSignInCompletion = ((GIDGoogleUser?, Error?) -> Void)
-  
-  typealias FirebaseSignInArgs = (authentication: GIDAuthentication?, completion: FirebaseSignInCompletion?)
-  typealias FirebaseSignInCompletion = ((AuthDataResult?, Error?) -> Void)
-  
+  typealias LoginArgs = (presentingView: UIViewController?, completion: LoginCompletion?)
+  typealias LoginCompletion = ((GIDGoogleUser?, Error?) -> Void)
+    
   static let shared = GoogleLoginService()
   
-  private var googleSignInArgs: GoogleSignInArgs = (nil, nil)
-  private var firebaseSignInArgs: FirebaseSignInArgs = (nil, nil)
+  private var loginArgs: LoginArgs = (nil, nil)
     
-  let googleUserDisconnected = PublishSubject<(GIDGoogleUser, Error)>()
+  let userDisconnected = PublishSubject<(GIDGoogleUser, Error)>()
     
   private override init() {
     super.init()
@@ -47,44 +43,27 @@ class GoogleLoginService: NSObject {
     }
   }
   
-  func googleSignIn(from view: UIViewController, completion: GoogleSignInCompletion?) {
-    googleSignInArgs = (view, completion)
-    handleGoogleSignIn()
+  func login(from view: UIViewController, completion: LoginCompletion?) {
+    loginArgs = (view, completion)
+    handleLogin()
   }
-  
-  func firebaseSignIn(authentication: GIDAuthentication, completion: FirebaseSignInCompletion?) {
-    firebaseSignInArgs = (authentication, completion)
-    handleFirebaseSignIn()
-  }
-  
-  private func handleGoogleSignIn() {
-    GIDSignIn.sharedInstance()?.presentingViewController = googleSignInArgs.presentingView
+    
+  private func handleLogin() {
+    GIDSignIn.sharedInstance()?.presentingViewController = loginArgs.presentingView
     GIDSignIn.sharedInstance()?.signIn()
-  }
-  
-  private func handleFirebaseSignIn() {
-    let idToken = firebaseSignInArgs.authentication!.idToken
-    let accessToken = firebaseSignInArgs.authentication!.accessToken
-    let credential = GoogleAuthProvider.credential(withIDToken: idToken!, accessToken: accessToken!)
-    Auth.auth().signIn(with: credential) { [weak self] authResult, error in
-      self?.firebaseSignInArgs.completion?(authResult, error)
-      
-      // clean up
-      self?.firebaseSignInArgs = (nil, nil)
-    }
   }
 }
 
 extension GoogleLoginService: GIDSignInDelegate {
   func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-    googleSignInArgs.completion?(user, error)
+    loginArgs.completion?(user, error)
     
     // clean up
-    googleSignInArgs = (nil, nil)
+    loginArgs = (nil, nil)
     GIDSignIn.sharedInstance()?.presentingViewController = nil
   }
 
   func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-    googleUserDisconnected.onNext((user, error))
+    userDisconnected.onNext((user, error))
   }
 }

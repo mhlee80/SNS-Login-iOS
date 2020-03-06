@@ -28,6 +28,8 @@
 		82BF26912410DF5C00A9C78B /* KakaoLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26902410DF5C00A9C78B /* KakaoLoginService.swift */; };
 		82BF26932410E47C00A9C78B /* KakaoLoginService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26922410E47C00A9C78B /* KakaoLoginService+Rx.swift */; };
 		82BF26952410E4FC00A9C78B /* KakaoLoginService+LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26942410E4FC00A9C78B /* KakaoLoginService+LoginScreen.swift */; };
+		82BF26972412102E00A9C78B /* GoogleLoginService+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26962412102E00A9C78B /* GoogleLoginService+Firebase.swift */; };
+		82BF26992412127B00A9C78B /* GoogleLoginService+Firebase+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26982412127B00A9C78B /* GoogleLoginService+Firebase+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		82BF26902410DF5C00A9C78B /* KakaoLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginService.swift; sourceTree = "<group>"; };
 		82BF26922410E47C00A9C78B /* KakaoLoginService+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KakaoLoginService+Rx.swift"; sourceTree = "<group>"; };
 		82BF26942410E4FC00A9C78B /* KakaoLoginService+LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KakaoLoginService+LoginScreen.swift"; sourceTree = "<group>"; };
+		82BF26962412102E00A9C78B /* GoogleLoginService+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleLoginService+Firebase.swift"; sourceTree = "<group>"; };
+		82BF26982412127B00A9C78B /* GoogleLoginService+Firebase+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleLoginService+Firebase+Rx.swift"; sourceTree = "<group>"; };
 		9FCAEF47AFCB890A5C59D1B5 /* Pods-SNS-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS-Login.release.xcconfig"; path = "Target Support Files/Pods-SNS-Login/Pods-SNS-Login.release.xcconfig"; sourceTree = "<group>"; };
 		A9DA37061B5FD87B65D57232 /* Pods_SNS_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNS_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,6 +128,8 @@
 			children = (
 				82BF267B240F3E7500A9C78B /* GoogleLoginService.swift */,
 				82BF26862410D23200A9C78B /* GoogleLoginService+Rx.swift */,
+				82BF26962412102E00A9C78B /* GoogleLoginService+Firebase.swift */,
+				82BF26982412127B00A9C78B /* GoogleLoginService+Firebase+Rx.swift */,
 				82BF26882410D52000A9C78B /* FacebookLoginService.swift */,
 				82BF268A2410D6D000A9C78B /* FacebookLoginService+Rx.swift */,
 				82BF26902410DF5C00A9C78B /* KakaoLoginService.swift */,
@@ -288,6 +294,7 @@
 				826EAB18240CC628008F31B5 /* LoginScreenProtocols.swift in Sources */,
 				82BF26872410D23200A9C78B /* GoogleLoginService+Rx.swift in Sources */,
 				82BF26932410E47C00A9C78B /* KakaoLoginService+Rx.swift in Sources */,
+				82BF26992412127B00A9C78B /* GoogleLoginService+Firebase+Rx.swift in Sources */,
 				82BF268124108FDE00A9C78B /* GoogleLoginService+LoginScreen.swift in Sources */,
 				826EAB17240CC628008F31B5 /* LoginScreenViewModel.swift in Sources */,
 				82BF26952410E4FC00A9C78B /* KakaoLoginService+LoginScreen.swift in Sources */,
@@ -297,6 +304,7 @@
 				826EAAFD240CC25B008F31B5 /* AppDelegate.swift in Sources */,
 				82BF26892410D52000A9C78B /* FacebookLoginService.swift in Sources */,
 				82BF267C240F3E7500A9C78B /* GoogleLoginService.swift in Sources */,
+				82BF26972412102E00A9C78B /* GoogleLoginService+Firebase.swift in Sources */,
 				82BF268B2410D6D000A9C78B /* FacebookLoginService+Rx.swift in Sources */,
 				826EAAFF240CC25B008F31B5 /* SceneDelegate.swift in Sources */,
 			);

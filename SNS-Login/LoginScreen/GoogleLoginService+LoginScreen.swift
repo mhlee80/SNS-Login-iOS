@@ -11,7 +11,7 @@ import RxSwift
 import GoogleSignIn
 
 extension Reactive where Base: GoogleLoginService {
-  func googleSignIn(from loginScreenView: LoginScreenViewProtocol) -> Observable<GIDGoogleUser> {
-    return self.googleSignIn(from: loginScreenView as! UIViewController)
+  func login(from loginScreenView: LoginScreenViewProtocol) -> Observable<GIDGoogleUser> {
+    return self.login(from: loginScreenView as! UIViewController)
   }
 }
