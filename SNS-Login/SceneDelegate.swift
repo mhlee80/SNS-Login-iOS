@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import FBSDKCoreKit
-import KakaoOpenSDK
 
 @available(iOS 13, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
