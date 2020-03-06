@@ -77,6 +77,18 @@ class LoginScreenView: UIViewController, LoginScreenViewProtocol {
     return v
   }()
   
+  private lazy var facebookFirebaseLoginButton: UIButton = {
+    let v = UIButton()
+    v.backgroundColor = .white
+    v.layer.borderWidth = 1
+    v.layer.cornerRadius = 24
+    v.layer.borderColor = UIColor.black.cgColor
+    v.setTitleColor(.black, for: .normal)
+    v.titleLabel?.font = .systemFont(ofSize: 20)
+    v.setTitle("Facebook + Firebase Login", for: .normal)
+    return v
+  }()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
@@ -87,6 +99,7 @@ class LoginScreenView: UIViewController, LoginScreenViewProtocol {
     view.addSubview(facebookLoginButton)
     view.addSubview(kakaoLoginButton)
     view.addSubview(googleFirebaseLoginButton)
+    view.addSubview(facebookFirebaseLoginButton)
     
     titleLabel.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
@@ -112,6 +125,12 @@ class LoginScreenView: UIViewController, LoginScreenViewProtocol {
     }
     
     googleFirebaseLoginButton.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.bottom.equalTo(facebookFirebaseLoginButton.snp.top).offset(-20)
+      make.size.equalTo(CGSize(width: 260, height: 48))
+    }
+    
+    facebookFirebaseLoginButton.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
       make.bottom.equalToSuperview().offset(-20)
       make.size.equalTo(CGSize(width: 260, height: 48))
@@ -139,6 +158,10 @@ class LoginScreenView: UIViewController, LoginScreenViewProtocol {
     
     googleFirebaseLoginButton.rx.tap.subscribe(onNext: { [weak self] in
         self?.viewModel?.presentGoogleFirebaseLoginFrom(self!)
+    }).disposed(by: disposeBag)
+    
+    facebookFirebaseLoginButton.rx.tap.subscribe(onNext: { [weak self] in
+        self?.viewModel?.presentFacebookFirebaseLoginFrom(self!)
     }).disposed(by: disposeBag)
   }
 }

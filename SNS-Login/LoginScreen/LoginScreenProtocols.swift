@@ -26,4 +26,5 @@ protocol LoginScreenViewModelProtocol {
   func presentFacebookLoginFrom(_ view: LoginScreenViewProtocol)
   func presentKakaoLoginFrom(_ view: LoginScreenViewProtocol)
   func presentGoogleFirebaseLoginFrom(_ view: LoginScreenViewProtocol)
+  func presentFacebookFirebaseLoginFrom(_ view: LoginScreenViewProtocol)
 }

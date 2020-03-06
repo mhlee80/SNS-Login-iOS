@@ -71,4 +71,23 @@ class LoginScreenViewModel: NSObject, LoginScreenViewModelProtocol {
       log.info("error: \(error)")
     }).disposed(by: disposeBag)
   }
+  
+  func presentFacebookFirebaseLoginFrom(_ view: LoginScreenViewProtocol) {
+    FacebookLoginService.shared.rx.login(from: view, permissions: ["email"]).flatMap { result -> Observable<AuthDataResult> in
+      if result.isCancelled {
+        log.info("facebook login is canncelled")
+        throw NSError(domain: "facebook login is cancelled", code: 0)
+      }
+      log.info("facebook login success: \(result)")
+      return FacebookLoginService.shared.rx.firebaseSignIn(accessToken: result.token!)
+    }.subscribe(onNext: { authResult in
+      log.info("firebase login success: \(authResult.user.providerData.first?.email ?? "nil")")
+//      for d in authResult.user.providerData {
+//        log.info(d)
+//        log.info("\(d.providerID): \(d.email ?? "nil")")
+//      }
+    }, onError: { error in
+      log.info("error: \(error)")
+    }).disposed(by: disposeBag)
+  }
 }
