@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import KakaoOpenSDK
+import RxSwift
 
 class KakaoLoginService: NSObject {
   typealias LoginArgs = (presentingView: UIViewController?, completion: LoginCompletion?)
@@ -61,6 +62,23 @@ class KakaoLoginService: NSObject {
     session.presentingViewController = loginArgs.presentingView
     session.open { [weak self] error in
       self?.loginArgs.completion?(session.token, error)
+    }
+  }
+}
+
+extension Reactive where Base: KakaoLoginService {
+  func login(from view: UIViewController) -> Observable<KOToken> {
+    return Observable<KOToken>.create { observer -> Disposable in
+      self.base.login(from: view) { result, error in
+        if let error = error {
+          observer.onError(error)
+          return
+        }
+        
+        observer.onNext(result!)
+        observer.onCompleted()
+      }
+      return Disposables.create()
     }
   }
 }

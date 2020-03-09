@@ -24,7 +24,6 @@
 		82BF26892410D52000A9C78B /* FacebookLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26882410D52000A9C78B /* FacebookLoginService.swift */; };
 		82BF268D2410D81F00A9C78B /* FacebookLoginService+LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF268C2410D81F00A9C78B /* FacebookLoginService+LoginScreen.swift */; };
 		82BF26912410DF5C00A9C78B /* KakaoLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26902410DF5C00A9C78B /* KakaoLoginService.swift */; };
-		82BF26932410E47C00A9C78B /* KakaoLoginService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26922410E47C00A9C78B /* KakaoLoginService+Rx.swift */; };
 		82BF26952410E4FC00A9C78B /* KakaoLoginService+LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26942410E4FC00A9C78B /* KakaoLoginService+LoginScreen.swift */; };
 		82BF26972412102E00A9C78B /* GoogleLoginService+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF26962412102E00A9C78B /* GoogleLoginService+Firebase.swift */; };
 		82BF269B24121D0B00A9C78B /* FacebookLoginService+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF269A24121D0B00A9C78B /* FacebookLoginService+Firebase.swift */; };
@@ -50,7 +49,6 @@
 		82BF26882410D52000A9C78B /* FacebookLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginService.swift; sourceTree = "<group>"; };
 		82BF268C2410D81F00A9C78B /* FacebookLoginService+LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacebookLoginService+LoginScreen.swift"; sourceTree = "<group>"; };
 		82BF26902410DF5C00A9C78B /* KakaoLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginService.swift; sourceTree = "<group>"; };
-		82BF26922410E47C00A9C78B /* KakaoLoginService+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KakaoLoginService+Rx.swift"; sourceTree = "<group>"; };
 		82BF26942410E4FC00A9C78B /* KakaoLoginService+LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KakaoLoginService+LoginScreen.swift"; sourceTree = "<group>"; };
 		82BF26962412102E00A9C78B /* GoogleLoginService+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleLoginService+Firebase.swift"; sourceTree = "<group>"; };
 		82BF269A24121D0B00A9C78B /* FacebookLoginService+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacebookLoginService+Firebase.swift"; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 				82BF26882410D52000A9C78B /* FacebookLoginService.swift */,
 				82BF269A24121D0B00A9C78B /* FacebookLoginService+Firebase.swift */,
 				82BF26902410DF5C00A9C78B /* KakaoLoginService.swift */,
-				82BF26922410E47C00A9C78B /* KakaoLoginService+Rx.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -286,7 +283,6 @@
 			files = (
 				826EAB15240CC628008F31B5 /* LoginScreenView.swift in Sources */,
 				826EAB18240CC628008F31B5 /* LoginScreenProtocols.swift in Sources */,
-				82BF26932410E47C00A9C78B /* KakaoLoginService+Rx.swift in Sources */,
 				82BF269B24121D0B00A9C78B /* FacebookLoginService+Firebase.swift in Sources */,
 				82BF268124108FDE00A9C78B /* GoogleLoginService+LoginScreen.swift in Sources */,
 				826EAB17240CC628008F31B5 /* LoginScreenViewModel.swift in Sources */,
