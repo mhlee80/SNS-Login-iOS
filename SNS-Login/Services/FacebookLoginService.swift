@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import RxSwift
 
 class FacebookLoginService: NSObject {
   typealias LoginArgs = (presentingView: UIViewController?, permissions: [String], completion: LoginCompletion?)
@@ -53,5 +54,22 @@ class FacebookLoginService: NSObject {
   private func handleLogin() {
     let loginManager = LoginManager()
     loginManager.logIn(permissions: loginArgs.permissions, from: loginArgs.presentingView, handler: loginArgs.completion)
+  }
+}
+
+extension Reactive where Base: FacebookLoginService {
+  func login(from view: UIViewController, permissions: [String]) -> Observable<LoginManagerLoginResult> {
+    return Observable<LoginManagerLoginResult>.create { observer -> Disposable in
+      self.base.login(from: view, permissions: permissions) { result, error in
+        if let error = error {
+          observer.onError(error)
+          return
+        }
+        
+        observer.onNext(result!)
+        observer.onCompleted()
+      }
+      return Disposables.create()
+    }
   }
 }

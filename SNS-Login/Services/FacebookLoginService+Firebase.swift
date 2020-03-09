@@ -9,6 +9,7 @@
 import Foundation
 import FBSDKCoreKit
 import Firebase
+import RxSwift
 
 extension FacebookLoginService {
   func firebaseSignIn(accessToken: AccessToken, completion: ((AuthDataResult?, Error?) -> Void)?) {
@@ -16,6 +17,23 @@ extension FacebookLoginService {
     let credential = FacebookAuthProvider.credential(withAccessToken: token)
     Auth.auth().signIn(with: credential) { authResult, error in
       completion?(authResult, error)
+    }
+  }
+}
+
+extension Reactive where Base: FacebookLoginService {
+  func firebaseSignIn(accessToken: AccessToken) -> Observable<AuthDataResult> {
+    return Observable<AuthDataResult>.create { observer -> Disposable in
+      self.base.firebaseSignIn(accessToken: accessToken) { authResult, error in
+        if let error = error {
+          observer.onError(error)
+          return
+        }
+        
+        observer.onNext(authResult!)
+        observer.onCompleted()
+      }
+      return Disposables.create()
     }
   }
 }
