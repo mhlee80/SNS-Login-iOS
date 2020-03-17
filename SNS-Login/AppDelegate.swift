@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     KakaoLoginService.shared.handleApplication(application,
                                                didFinishLaunchingWithOptions: launchOptions)
     
-    if #available(iOS 9, *) {
+    if #available(iOS 13, *) {} else {
       window = UIWindow()
       window?.rootViewController = LoginScreenCoordinator.createModule() as? UIViewController
       window?.makeKeyAndVisible()
