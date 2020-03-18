@@ -13,7 +13,8 @@ import RxSwift
 
 class KakaoLoginService: NSObject {
   typealias LoginArgs = (presentingView: UIViewController?, completion: LoginCompletion?)
-  typealias LoginCompletion = ((KOToken?, Error?) -> Void)
+  typealias LoginResult = (token: KOToken, userMe: KOUserMe)
+  typealias LoginCompletion = ((LoginResult?, Error?) -> Void)
   
   static let shared = KakaoLoginService()
   
@@ -61,14 +62,27 @@ class KakaoLoginService: NSObject {
     
     session.presentingViewController = loginArgs.presentingView
     session.open { [weak self] error in
-      self?.loginArgs.completion?(session.token, error)
+      if let error = error {
+        self?.loginArgs.completion?(nil, error)
+        return
+      }
+      
+      KOSessionTask.userMeTask { error, me in
+        if let error = error {
+          self?.loginArgs.completion?(nil, error)
+          return
+        }
+
+        let result = LoginResult(session.token!, me!)
+        self?.loginArgs.completion?(result, nil)
+      }
     }
   }
 }
 
 extension Reactive where Base: KakaoLoginService {
-  func login(from view: UIViewController) -> Observable<KOToken> {
-    return Observable<KOToken>.create { observer -> Disposable in
+  func login(from view: UIViewController) -> Observable<KakaoLoginService.LoginResult> {
+    return Observable<KakaoLoginService.LoginResult>.create { observer -> Disposable in
       self.base.login(from: view) { result, error in
         if let error = error {
           observer.onError(error)

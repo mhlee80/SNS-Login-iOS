@@ -11,7 +11,7 @@ import RxSwift
 import KakaoOpenSDK
 
 extension Reactive where Base: KakaoLoginService {
-  func login(from loginScreenView: LoginScreenViewProtocol) -> Observable<KOToken> {
+  func login(from loginScreenView: LoginScreenViewProtocol) -> Observable<KakaoLoginService.LoginResult> {
     return self.login(from: loginScreenView as! UIViewController)
   }
 }
