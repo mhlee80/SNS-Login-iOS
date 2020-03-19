@@ -27,7 +27,7 @@
 ### Kakao login
   - SDK 다운로드 및 프로젝트에 추가
   - 카카오 developer에서 앱 생성 및 네이티브 앱 키 추출
-  - iOS 플랫폼 생성
+  - iOS 플랫폼 생성 (번들 ID 입력)
   - 사용자 관리 -> 활성화 및 로그인 동의항목 설정
   - 추출한 네이티브 앱키로 Info.plist의 [KAKAO_NATIVE_APP_KEY] 교체
   - 코드 실행
