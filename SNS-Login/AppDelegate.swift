@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyBeaver
+import Firebase
 
 let log = SwiftyBeaver.self
 
@@ -19,8 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     log.addDestination(ConsoleDestination())
-
     log.info("")
+    
+    FirebaseApp.configure()
     
     // Google Login
     GoogleLoginService.shared.handleApplication(application,

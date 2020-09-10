@@ -27,7 +27,6 @@ class GoogleLoginService: NSObject {
   }
   
   func handleApplication(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-    FirebaseApp.configure()
     GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
     GIDSignIn.sharedInstance()?.delegate = self
   }
